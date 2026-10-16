@@ -1,0 +1,2 @@
+export function saveJSON(name,data){downloadBlob(name,JSON.stringify(data,null,2),'application/json')}
+export function downloadBlob(name,data,type){const b=new Blob([data],{type});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}

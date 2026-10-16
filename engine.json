@@ -1,0 +1,6 @@
+{
+  "name": "Risky Engine",
+  "version": "0.1",
+  "singleFolder": true,
+  "features": ["3D", "GLB", "GLB animations", "textures", "terrain painting", "scene editor", "UI foundation", "2D foundation"]
+}

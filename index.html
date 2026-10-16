@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Risky Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="topbar">
+    <div class="brand">RISKY ENGINE <span>0.1</span></div>
+    <button id="newScene">Neue Szene</button>
+    <button id="saveScene">Szene speichern</button>
+    <label class="fileBtn">GLB importieren<input id="glbInput" type="file" accept=".glb,.gltf" hidden></label>
+    <label class="fileBtn">Textur importieren<input id="textureInput" type="file" accept="image/*" hidden></label>
+  </div>
+
+  <div id="layout">
+    <aside id="left">
+      <h3>Werkzeuge</h3>
+      <button class="tool active" data-tool="select">↖ Auswählen</button>
+      <button class="tool" data-tool="move">↔ Verschieben</button>
+      <button class="tool" data-tool="rotate">⟳ Drehen</button>
+      <button class="tool" data-tool="scale">⤢ Skalieren</button>
+      <button class="tool" data-tool="grass">🌱 Gras malen</button>
+      <button id="addCube">＋ Würfel</button>
+      <button id="addSphere">＋ Kugel</button>
+      <button id="addPlane">＋ Ebene</button>
+      <hr>
+      <h3>Assets</h3>
+      <div id="assets"></div>
+    </aside>
+
+    <main id="center">
+      <div id="viewport"></div>
+      <div id="hint">Linksklick: auswählen · WASD: Kamera bewegen · Rechtsklick: Kamera drehen</div>
+      <div id="grassPanel" class="floating hidden">
+        <b>Gras-Pinsel</b>
+        <label>Größe <input id="brushSize" type="range" min="1" max="20" value="5"></label>
+        <label>Dichte <input id="brushDensity" type="range" min="1" max="30" value="8"></label>
+        <button id="clearGrass">Gras löschen</button>
+      </div>
+    </main>
+
+    <aside id="right">
+      <h3>Szene</h3>
+      <div id="sceneTree"></div>
+      <h3>Inspector</h3>
+      <div id="inspector"><span class="muted">Kein Objekt ausgewählt.</span></div>
+      <h3>Animationen</h3>
+      <div id="animations"><span class="muted">Animiertes GLB auswählen.</span></div>
+    </aside>
+  </div>
+
+  <div id="bottom">
+    <span id="status">Bereit.</span>
+    <span id="fps">FPS: --</span>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

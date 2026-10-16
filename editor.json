@@ -1,0 +1,5 @@
+{
+  "panels": ["Viewport", "Scene", "Inspector", "Animations", "Assets"],
+  "tools": ["Select", "Move", "Rotate", "Scale", "Grass Paint"],
+  "planned": ["2D Editor", "Menu Editor", "Sprite Editor", "Particle Editor", "Physics", "Scripting"]
+}
